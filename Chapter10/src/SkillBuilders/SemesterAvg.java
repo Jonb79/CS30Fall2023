@@ -46,7 +46,6 @@ public class SemesterAvg
 	{
 		frmSemesterAverage = new JFrame("Semester Average");
 		frmSemesterAverage.setOpacity(2.0f);
-		frmSemesterAverage.setFont(new Font("Dialog", Font.BOLD, 13));
 		frmSemesterAverage.setBounds(100, 100, 450, 300);
 		frmSemesterAverage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
