@@ -10,10 +10,13 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+
 import java.awt.Font;
 import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
 
 public class DemoSep14 {
 
@@ -45,7 +48,14 @@ public class DemoSep14 {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize() 
+	{
+		ImageIcon cres = new ImageIcon("C:\\Users\\26031001\\git\\CS30Fall2023\\Chapter10\\cres.png");
+		ImageIcon west = new ImageIcon("C:\\Users\\26031001\\git\\CS30Fall2023\\Chapter10\\west.png");
+		ImageIcon east = new ImageIcon("C:\\Users\\26031001\\git\\CS30Fall2023\\Chapter10\\east.jpg");
+		
+		
+		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 492, 476);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -68,8 +78,8 @@ public class DemoSep14 {
 		ln.setColumns(10);
 		
 		JTextArea disp = new JTextArea();
-		disp.setFont(new Font("Monospaced", Font.PLAIN, 15));
-		disp.setBounds(10, 121, 317, 107);
+		disp.setFont(new Font("Monospaced", Font.PLAIN, 13));
+		disp.setBounds(10, 121, 456, 107);
 		frame.getContentPane().add(disp);
 		
 		JComboBox CB1 = new JComboBox();
@@ -82,6 +92,10 @@ public class DemoSep14 {
 		CB2.setModel(new DefaultComboBoxModel(new String[] {"Select School", "Crescent", "Western", "Eastern"}));
 		CB2.setBounds(180, 62, 135, 22);
 		frame.getContentPane().add(CB2);
+		
+		JLabel di = new JLabel("");
+		di.setBounds(32, 259, 369, 167);
+		frame.getContentPane().add(di);
 		
 		JButton btnNewButton = new JButton("Submit");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -108,14 +122,22 @@ public class DemoSep14 {
 				if(CB2.getSelectedItem().equals("Crescent"))
 				{
 					school = "Crescent";
+					
+					di.setIcon(cres);
+					
+					
 				}
 				else if(CB2.getSelectedItem().equals("Western"))
 				{
 					school = "Western";
+					
+					di.setIcon(west);
 				}
 				else 
 				{
 					school = "Eastern";
+					
+					di.setIcon(east);
 				}
 				
 				
@@ -130,9 +152,10 @@ public class DemoSep14 {
 			
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnNewButton.setBounds(337, 21, 89, 207);
+		btnNewButton.setBounds(377, 21, 89, 93);
 		frame.getContentPane().add(btnNewButton);
 		
+
 		
 		
 		
