@@ -4,10 +4,23 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import java.awt.Font;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 
-public class SemesterAvg 
+public class SemesterAvg /*implements ActionListener*/ 
 {
 
+	JFrame frame;
+	
+	JPanel contentPane;
+	
+	JLabel prompt1, prompt2, prompt3, average;
+	
+	JTextField grade1, grade2, grade3;
+	
+	JButton avgButton;
+	
 	private JFrame frmSemesterAverage;
 
 	/**
@@ -30,13 +43,14 @@ public class SemesterAvg
 			}
 		});
 	}
-
 	/**
 	 * Create the application.
 	 */
 	public SemesterAvg() 
 	{
 		initialize();
+		
+		
 	}
 
 	/**
@@ -46,8 +60,9 @@ public class SemesterAvg
 	{
 		frmSemesterAverage = new JFrame("Semester Average");
 		frmSemesterAverage.setOpacity(2.0f);
-		frmSemesterAverage.setBounds(100, 100, 450, 300);
+		frmSemesterAverage.setBounds(100, 100, 544, 407);
 		frmSemesterAverage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmSemesterAverage.getContentPane().setLayout(null);
 	}
 
 }
