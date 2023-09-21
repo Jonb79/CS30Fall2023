@@ -3,10 +3,11 @@ package SkillBuilders;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import java.awt.Font;
+/*import java.awt.Font;*/
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.border.EmptyBorder;
 
 public class SemesterAvg /*implements ActionListener*/ 
 {
@@ -26,6 +27,7 @@ public class SemesterAvg /*implements ActionListener*/
 	/**
 	 * Launch the application.
 	 */
+	/*
 	public static void main(String[] args) 
 	{
 		EventQueue.invokeLater(new Runnable() 
@@ -43,12 +45,29 @@ public class SemesterAvg /*implements ActionListener*/
 			}
 		});
 	}
+	*/
 	/**
 	 * Create the application.
 	 */
 	public SemesterAvg() 
 	{
-		initialize();
+		/*initialize();*/
+		
+		frame = new JFrame("Semester Average");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JPanel panel = new JPanel();
+		panel.setBorder(new EmptyBorder(10, 10, 10, 10));
+		panel.setBounds(new Rectangle(0, 2, 10, 5));
+		frame.getContentPane().add(panel, BorderLayout.NORTH);
+		panel.setLayout(new GridLayout(1, 0, 0, 0));
+		contentPane = new JPanel();
+		contentPane.setLayout(new GridLayout(0, 2, 10, 5));
+		contentPane.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+		prompt1 = new JLabel("Enter the first grade: ");
+		contentPane.add(prompt1);
+		
+		
 		
 		
 	}
@@ -56,13 +75,12 @@ public class SemesterAvg /*implements ActionListener*/
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	/*
 	private void initialize() 
 	{
-		frmSemesterAverage = new JFrame("Semester Average");
-		frmSemesterAverage.setOpacity(2.0f);
-		frmSemesterAverage.setBounds(100, 100, 544, 407);
-		frmSemesterAverage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frmSemesterAverage.getContentPane().setLayout(null);
+		
+		
+		
 	}
-
+	*/
 }
