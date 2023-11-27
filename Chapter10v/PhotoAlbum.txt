@@ -1,0 +1,36 @@
+ String eventName = e.getActionCommand();
+				 
+				String photo;
+				
+				if (eventName == "Next")
+				{
+					photo = PhotoAlbum3.start();
+					
+					phot.setIcon(FIRST_PHOTO2);
+					
+					if (photo.equals(FIRST_PHOTO))
+					{
+						
+						
+					}
+					else if (photo.equals(SECOND_PHOTO))
+					{
+						phot.setIcon(SECOND_PHOTO2);
+					}
+					else if (photo.equals(THIRD_PHOTO))
+					{
+						phot.setIcon(FIRST_PHOTO2);
+					}
+					else if (photo.equals(FOURTH_PHOTO))
+					{
+						phot.setIcon(FIRST_PHOTO2);
+					}
+					Next.setText("Back To The Start");
+					Next.setActionCommand("Back To The Start");
+				}
+				else if (eventName == "Back To The Start")
+				{
+					phot.setIcon(FIRST_PHOTO2);
+					/*Photo.setIcon(null);*/
+					Next.setText("Next");
+					Next.setActionCommand("Next");

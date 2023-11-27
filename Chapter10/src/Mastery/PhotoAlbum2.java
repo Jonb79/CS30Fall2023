@@ -1,6 +1,15 @@
+/*
+Program: PhotoAlbum.java 
+Last Date of this Revision: October 16, 2023
+Purpose: An application that uses if-else statements to output two
+ImageIcons that diplay the number of broken plates and the prize won by the player.
+Author: Jonathan,
+School: CHHS
+Course: Computer Science 30
+*/
 package Mastery;
-
 import java.awt.Color;
+import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -12,49 +21,15 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import java.awt.Dimension;
 
-import Mastery.PhotoAlbum.photoAlbum;
-
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-
-public class PhotoAlbum implements ActionListener
+public class PhotoAlbum2 implements ActionListener
 {
-
-	/**
-		 * @author 26031001
-		 *
-		 */
-	public static class photoAlbum 
-	{
-
-		/**
-		 * @param args
-		 */
-		public static void main(String[] args) 
-		{
-			// TODO Auto-generated method stub
-
-		}
-
-		public static String start() 
-		{
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-	}
-
-	/**
-	 * Launch the application.
-	 */
-	
 	static final String FIRST_PHOTO = "Mount Fuji";
 	static final String SECOND_PHOTO = "sticker";
 	static final String THIRD_PHOTO = "sticker";
 	static final String FOURTH_PHOTO = "sticker";
-	ImageIcon FIRST_PHOTO2 = new ImageIcon("C:\\Users\\26031001\\git\\CS30Fall2023\\Chapter10\\Mount_Fuji.jpg");  
+	ImageIcon FIRST_PHOTO2 = new ImageIcon("C:\\Users\\26031001\\git\\CS30Fall2023\\Chapter10\\Mount_Fuji.jpeg");  
 	ImageIcon SECOND_PHOTO2 = new ImageIcon("C:\\Users\\26031001\\git\\CS30Fall2023\\Chapter10\\sticker.gif");
 	ImageIcon THIRD_PHOTO2 = new ImageIcon("C:\\Users\\26031001\\git\\CS30Fall2023\\Chapter10\\sticker.gif");
 	ImageIcon FOURTH_PHOTO2 = new ImageIcon("C:\\Users\\26031001\\git\\CS30Fall2023\\Chapter10\\sticker.gif");
@@ -62,14 +37,15 @@ public class PhotoAlbum implements ActionListener
 	JPanel contentPane;
 	JButton Next;
 	JLabel Photo;
+	GameBooth breakAPlate;
 	
+
 	/**
 	 * Create the application.
-	 * @wbp.parser.entryPoint
 	 */
-	public PhotoAlbum() 
+	public PhotoAlbum2() 
 	{
-        /*The GUI needs four photos!*/
+		/*The GUI needs four photos!*/
 		
 		/*Create and set up the frame*/
 		frame = new JFrame("PhotoAlbum");
@@ -89,7 +65,7 @@ public class PhotoAlbum implements ActionListener
 		contentPane.add(Next);
 		
 		/*Create a label that will show prizes won */
-		Photo = new JLabel(" ");
+		Photo = new JLabel(new ImageIcon("C:\\Users\\26031001\\git\\CS30Fall2023\\Chapter10\\Mount_Fuji.jpeg"));
 		/*Photo.setIcon(null);*/
 		Photo.setAlignmentX(JLabel.CENTER_ALIGNMENT);
 		Photo.setBorder(new EmptyBorder(20, 20, 20, 20));
@@ -98,17 +74,34 @@ public class PhotoAlbum implements ActionListener
 		/*Add content pane to frame*/
 		frame.setContentPane(contentPane);
 		
-		Photo.setIcon(SECOND_PHOTO2);
+		
 		/*Size and then display the frame.*/
 		
 		frame.pack();
 		frame.setVisible(true);
 		
-		
-		
 	}
+
+	/*private double cost;
+    private String FIRST_PRIZE, CONSOLATION_PRIZE; 
 	
-	@Override
+	/**
+	 * constructor
+	 * pre: none
+	 * post: A GameBooth object created.
+	 * The cost of prizes are set.
+	
+	*/
+
+	/*public photoAlbum(double charge, String p1, String p2) 
+	{
+		cost = charge;
+		FIRST_PRIZE = p1;
+		CONSOLATION_PRIZE = p2;
+		charge = 0;
+		
+	}*/
+
 	public void actionPerformed(ActionEvent e) 
 	{
 		String eventName = e.getActionCommand();
@@ -116,7 +109,7 @@ public class PhotoAlbum implements ActionListener
 		
 		if (eventName == "Next")
 		{
-			photo = photoAlbum.start();
+			photo = PhotoAlbum2.start();
 			
 			if (photo.equals(FIRST_PHOTO))
 			{
@@ -139,20 +132,22 @@ public class PhotoAlbum implements ActionListener
 		}
 		else if (eventName == "Back To The Start")
 		{
-			Photo.setIcon(new ImageIcon("C:\\Users\\26031001\\git\\CS30Fall2023\\Chapter10\\Mount_Fuji.jpg"));
+			Photo.setIcon(new ImageIcon("C:\\Users\\26031001\\git\\CS30Fall2023\\Chapter10\\Mount_Fuji.jpeg"));
 			/*Photo.setIcon(null);*/
 			Next.setText("Next");
 			Next.setActionCommand("Next");
 		}
-		
 	}
 	
-	private static String start() 
+	static String start() 
 	{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
+
+
+
 	/**
 	 * Create and show the GUI.
 	 */
@@ -160,9 +155,11 @@ public class PhotoAlbum implements ActionListener
 	{
 		JFrame.setDefaultLookAndFeelDecorated(true);
 		
-		PhotoAlbum photoAlbum = new PhotoAlbum();
+		PhotoAlbum2 photoAlbum = new PhotoAlbum2();
 	}
-
+	/**
+	 * Launch the application.
+	 */
 	public static void main(String[] args) 
 	{
 		/*Methods that create and show a GUI should be run from an event-dispatching thread*/
@@ -173,9 +170,6 @@ public class PhotoAlbum implements ActionListener
 				runGUI();
 		    }
 	    });
-
-	}
-
 	
-
+    }
 }

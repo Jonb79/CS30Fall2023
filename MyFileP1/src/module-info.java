@@ -1,0 +1,2 @@
+module MyFileP1 {
+}
