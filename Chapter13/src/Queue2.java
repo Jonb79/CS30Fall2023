@@ -1,35 +1,55 @@
-import java.util.ArrayList;
 
 public class Queue2 
 {
+	private Object[] data;
+	private int front, rear, maxSize;
 
-	private ArrayList<Object> data;
-	private int front, rear;
-	
-	//Constructor Method
-	public Queue2()
+	public Queue2(int maxItems)
 	{
-		data = new ArrayList<Object>();
+		data = new Object[maxItems];
 		front = -1;
 		rear = -1;
+		maxSize = maxItems;
 	}
 	
 	public Object front()
 	{
-		return data.get(front);
+		return(data[front]);
 	}
 	
-	public Object rear()
+	public Object dequeue()
 	{
-		return data.get(rear);
+		Object item;
+		
+		item = data[front];
+		
+		if(front == rear)
+		{
+			makeEmpty();
+		}
+		else
+		{
+			//move front pointer to next item in the queue
+			front = (front + 1) % maxSize;
+		}
+		return item;
 	}
 	
-	
-	public void makeEmpty()
+	public void enqueue(Object item)
 	{
-		front = -1;
-		rear = -1;
+		if(isEmpty())
+		{
+			rear = 0;
+			front = 0;
+			data[rear] = item;
+		}
+		else
+		{
+			rear = (rear + 1) % maxSize;
+			data[rear] = item;
+		}
 	}
+	
 	
 	public boolean isEmpty()
 	{
@@ -43,47 +63,36 @@ public class Queue2
 		}
 	}
 	
+	
+	
+	
+	public void makeEmpty() 
+	{
+		front = -1;
+		rear = -1;
+	}
+	
 	public int size()
 	{
 		if(isEmpty())
+		{
 			return 0;
-		else
-			return((rear - front) + 1);
-	}
-	
-	public Object dequeue()//Remove method
-	{
-		Object item;
-		
-		item = data.get(front);
-		
-		data.remove(front);
-		
-		if(front == rear)
-		{
-			makeEmpty();
 		}
 		else
 		{
-			rear -= 1;
-		}
-		
-		return (item);
-	}
-	
-	public void enqueue(Object item)
-	{
-		if(isEmpty())
-		{
-			rear = 0;
-			front = 0;
-			data.add(item);
-		}
-		else
-		{
-			rear = rear + 1;
-			data.add(item);
+			if(rear > front)
+			{//front item is "in front" of rear item
+				return(rear - front + 1);
+			}
+			else if(front == rear + 1)
+			{
+				return maxSize;
+			}
+			else
+			{//front item is "behind" rear item
+				return(front - rear + 1);
+			}
 		}
 	}
-	
 }
+
