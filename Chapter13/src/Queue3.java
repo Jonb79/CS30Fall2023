@@ -7,7 +7,7 @@ public class Queue3
 	private int front, rear;
 	
 	//Constructor Method
-	public Queue3()
+	public Queue3 ()
 	{
 		data = new ArrayList<Object>();
 		front = -1;
