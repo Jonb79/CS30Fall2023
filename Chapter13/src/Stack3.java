@@ -8,7 +8,7 @@ public class Stack3
 	public Stack3()
 	{
 		data = new ArrayList<Object>();
-		top = -1;//no items in the arraylist
+		top = -1;//no items in the arraylist 
 	}
 	
 	public Object top()
