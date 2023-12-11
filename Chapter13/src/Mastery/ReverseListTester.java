@@ -14,20 +14,28 @@ public class ReverseListTester
 		ReverseList rL = new ReverseList(5);
 		
 		int a = rL.size();  
+		 
+		int b = 0;
 		
 		int answer;
 		
-		/*a = 10;*/
+		/*String c;
+		
+	    a = 10;*/
 		System.out.println("Items in ReverseList: "+ rL.size());
 		
 		
-		while(rL.size() < 10 && rL.size() != 11)//Check if the stack size is less than or equal 10 rL.size() < 10.
+		while(b < 11)//Check if the stack size is less than or equal 10 && a <= 10 && rL.size() < 10 && rL.size() != 11.
 		{
 			
 				System.out.println("Please enter TEN numbers as items for ReverseList or enter (999 to quit): ");
 				
 			    answer = userinput.nextInt();
-			    /*
+			    
+			    b++;
+			    
+			    System.out.println("Items in ReverseList: "+ rL.size());
+			    
 				if(answer == 999) 
 	            { 
 					System.out.println("exit..."); 
@@ -36,10 +44,15 @@ public class ReverseListTester
 	            } 
 	            else if(answer != 999)
 	            {
-	            	rL.push(answer);
 	            	
+	            	String str1 = Integer.toString(answer);
+				    
+				    rL.push(str1);
+				    System.out.println("The users answer is: " + str1 + "\n"); 
 	            }
 				
+				System.out.println(rL.toString());
+				/*
 				if(answer != 999) 
 	            { 
 					rL.push(answer);
@@ -52,6 +65,7 @@ public class ReverseListTester
 	            }
          	*/
 		}
+		System.out.println("Items in ReverseList: "+ rL.size());
 		System.out.println("Top of ReverseList: " + (String)rL.top());
 		System.out.println("Items in ReverseList: "+ rL.size());
 		System.out.println(rL);

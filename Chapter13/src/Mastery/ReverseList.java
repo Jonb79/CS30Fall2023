@@ -7,6 +7,7 @@ public class ReverseList
 	
 	public ReverseList(int maxItems)
 	{
+		maxItems = 10;
 		data = new Object[maxItems];//an empty Stack that can hold up to maxItems
 		top = -1;//no items in the array
 	}
@@ -24,11 +25,14 @@ public class ReverseList
 	
 	public void push(Object item)
 	{
+		
+		
 		if(top < data.length - 1)
 		{
 			top  = top + 1;
 			data[top] = item;
 		}
+		
 	}
 	
 	public boolean isEmpty()
@@ -59,6 +63,8 @@ public class ReverseList
 	{
 		top = -1;
 	}
+	
+	
 	
 
 }
