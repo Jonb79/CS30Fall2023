@@ -23,6 +23,8 @@ public class Stack3Tester
 		
 		System.out.println("Top of Stack3: " + s3.top());
 		System.out.println("Items in Stack S2: "+ s3.size());
+		
+		System.out.println(s3);
 
 	}
 
