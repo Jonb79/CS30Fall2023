@@ -35,8 +35,8 @@ public class PhidgetsRover
         //Turning
         
         //Turn in one direction
-        leftMotors.setTargetVelocity(0.25);
-        rightMotors.setTargetVelocity(-0.25);
+        leftMotors.setTargetVelocity(0.5);
+        rightMotors.setTargetVelocity(-0.5);
 
         //Wait for 2 second
         Thread.sleep(2000);
