@@ -12,7 +12,7 @@ public class PhidgetsRover
         //Create
         DCMotor leftMotors = new DCMotor();
         DCMotor rightMotors = new DCMotor();
-        /*DistanceSensor sonar = new DistanceSensor();*/ //Avoiding Obstacles
+        DistanceSensor sonar = new DistanceSensor();/**/ //Avoiding Obstacles
         
         //Address
         leftMotors.setChannel(0);
@@ -21,7 +21,7 @@ public class PhidgetsRover
         //Open
         leftMotors.open(5000);
         rightMotors.open(5000);
-        /*sonar.open(5000);*/ //Avoiding Obstacles
+        sonar.open(5000);/**/ //Avoiding Obstacles
         
         /* //Moving Normally
         //Move forward at full speed
@@ -32,6 +32,7 @@ public class PhidgetsRover
         Thread.sleep(1000);
         */
         
+        /*
         //Turning
         
         //Turn in one direction
@@ -44,8 +45,9 @@ public class PhidgetsRover
         //Stop motors
         leftMotors.setTargetVelocity(0);
         rightMotors.setTargetVelocity(0);
+        */
         
-        /*//Avoiding Obstacles
+        /**///Avoiding Obstacles
         while (true) 
         {
 
@@ -67,7 +69,7 @@ public class PhidgetsRover
             //Wait for 250milliseconds
             Thread.sleep(250);
         }
-        */
+        
 	}
 
 }
