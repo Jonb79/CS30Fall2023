@@ -22,15 +22,19 @@ public class PhidgetsRoverAvoidObstacles
         rightMotors.open(5000);
         sonar.open(5000);
 
-        while (true) {
+        while (true) 
+        {
 
             System.out.println("Distance: " + sonar.getDistance() + " mm");
             
-            if (sonar.getDistance() < 200) {
+            if (sonar.getDistance() < 200) 
+            {
                 //Object detected! Stop motors
                 leftMotors.setTargetVelocity(0);
                 rightMotors.setTargetVelocity(0);
-            } else {
+            } 
+            else 
+            {
                 //Move forward slowly (25% max speed)
                 leftMotors.setTargetVelocity(0.25);
                 rightMotors.setTargetVelocity(0.25);
@@ -38,7 +42,8 @@ public class PhidgetsRoverAvoidObstacles
 
             //Wait for 250milliseconds
             Thread.sleep(250);
-
+        }
 	}
-
 }
+
+
